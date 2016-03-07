@@ -10,7 +10,6 @@ import org.junit.Test;
 
 public class myTriangle_Test extends Triangle {
 
-
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -28,20 +27,31 @@ public class myTriangle_Test extends Triangle {
 	}
 @Test
 public void testPerimeter() {
-Triangle instance = new Triangle(sideOne, sideTwo, sideThree);{
-	sideOne = 2;
-	sideTwo= 2;
-	sideThree= 2;};;
+Triangle instance = new Triangle();{
+	setSideOne(2);
+	setSideTwo(2);
+	setSideThree(2);};;
 double bExpectedresult = 6;
-double bActualResult= instance.Perimeter;
+double bActualResult= instance.getPerimeter();
 assertEquals("testPerimeter() failed", bExpectedresult,bActualResult);
 }
 @Test
 public void testArea() {
-Triangle instance = new Triangle(sideOne, sideTwo, sideThree);{
-	sideOne = 2;
-	sideTwo= 2;
-	sideThree= 2;};;
+Triangle instance = new Triangle();{
+	setSideOne(2);
+	setSideTwo(2);
+	setSideThree(2);};;
 double bExpectedresult = Math.sqrt(3);
-double bActualResult= instance.Area;
-assertEquals("testArea() failed", bExpectedresult,bActualResult);}}
+double bActualResult= instance.getArea();
+assertEquals("testArea() failed", bExpectedresult,bActualResult);}
+@Test
+public void testToString() {
+Triangle instance = new Triangle();{
+	setSideOne(2);
+	setSideTwo(2);
+	setSideThree(2);};;
+String bExpectedresult = "The area of the triangle is" + this.getArea() +
+"The perimeter of the triangle is" +this.getPerimeter();
+String bActualResult= instance.toString();
+assertEquals("testToString() failed", bExpectedresult,bActualResult);
+}}
